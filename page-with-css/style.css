@@ -1,0 +1,19 @@
+body{
+    background-color: blanchedalmond;
+}
+
+p{
+    font-size: 24px;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.introduction{
+    font-size: 36px;
+    background-color: cornflowerblue;
+}
+
+/* call the class, .classname */
+
+.a{
+    color: blue;
+}

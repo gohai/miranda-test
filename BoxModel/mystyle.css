@@ -1,0 +1,46 @@
+h1{
+    font-family: sans-serif;
+    color: navy;
+}
+
+.special{
+    background-color: blanchedalmond;
+    border-width: 1px;
+    border-style: dotted;
+    border-color: rgb(225, 201, 248);
+}
+
+.myImage{
+width: 90px;
+}
+
+.imageBox{
+    border-width:2px;
+    border-style: dashed;
+    border-color: chocolate;
+
+    padding:15px;
+    margin:15px;
+    /* margin-left: 15px; */
+
+    background-color:lavenderblush;
+}
+
+.secondDiv{
+    background-color:lavender;
+    position:absolute;
+    top:300px;
+    left:300px;
+}
+
+.thirdDiv{
+    position:fixed;
+    top:50px;
+    left:150px;
+}
+
+.fourthDiv{
+    position:relative;
+    top:10px;
+    left:30px;
+}

@@ -1,0 +1,52 @@
+h1{
+    /* center the words */
+    text-align: center;
+    font-family: sans-serif;
+}
+.img{
+    width:300px;
+}
+div{
+    padding: 30px;
+    padding-top: 5px;
+    margin:30px;
+    /* center the image */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+p{
+    font-size: 24px;
+    font-family: fantasy;
+    background-color: rgb(230, 225, 218);
+}
+.headlines{
+   background-color: antiquewhite;
+}
+.pic1{
+    border-style: dashed; 
+    border-color:plum;
+    border-width:1px;   
+
+}
+.pic2{
+    border-style: dashed; 
+    border-color:rgb(253, 230, 137);
+    border-width:1px; 
+}
+.pic3{
+    border-style: dashed; 
+    border-color:rgb(71, 212, 177);
+    border-width:1px; 
+}
+.pic4{
+    border-style: dashed; 
+    border-color:rgb(170, 15, 176);
+    border-width:1px;  
+}
+.pic5{
+    border-style: dashed; 
+    border-color:rgb(220, 19, 19);
+    border-width:1px;  
+}
