@@ -1,0 +1,17 @@
+body{
+    margin:10px;
+    background-color: azure;
+}
+
+h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: oblique;
+}
+
+.fastbutton{
+    margin-top: 20px;
+}
+
+#canvasContainer{
+margin-left :30px;
+}
