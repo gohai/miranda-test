@@ -12,14 +12,13 @@ function setup(){
 
 function draw(){
     background(120,40,240);
-  noStroke();
-  
+  noStroke(); 
  circle(x,height/2,50);
+
 x += xSpeed;
 if(x>width){
     x=0;
-}
-
+ }
 }
 function increaseSpeed(){
     xSpeed ++;

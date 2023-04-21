@@ -1,0 +1,42 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: lightblue;
+}
+
+canvas {
+    display: block;
+}
+
+
+/* 
+the "#" let's us style 
+the elemnt with a given ID
+ */
+#canvasContainer{
+   /* margin-left: 30px;  */
+    border-style: solid;
+    border-color: red;
+    border-width: 1px;
+
+    width: 400px;
+    display: inline-block;
+}
+.textBox{
+    border: solid 1px green;
+    width: 100px;
+    display: inline-block;
+}
+.textBox p{
+    margin: 0;
+}
+
+.wrapper{
+    
+    width: 504px;
+    border: 2px dashed black;
+    /* display: inline-block; */
+    margin: auto;
+}
+
+
