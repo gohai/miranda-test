@@ -1,0 +1,46 @@
+/* div{
+    border:1px dotted black;
+} */
+#wrapper{
+    margin-top:150px;
+    background: transparent;
+    background-image: url(bkg/bkg1.jpeg);
+}
+
+#name{
+    margin : auto;
+    width: 1000px;
+   
+}
+h1{
+    font-family: fantasy;
+    font-size: 120px;
+    text-decoration-color: azure;
+}
+#description{
+    background-color: azure;
+    margin:auto;
+    text-align: center;
+
+}
+p{
+    background-color:azure;
+    font-size:24px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#start{
+    margin:auto;
+    width:240px;
+}
+button {
+  background-color: #080908; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  margin: 24px;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+}

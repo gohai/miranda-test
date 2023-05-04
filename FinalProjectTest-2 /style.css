@@ -1,0 +1,27 @@
+body{
+
+    background-color: azure;
+}
+
+h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: oblique;
+    text-align: center;
+}
+
+#canvasContainer{
+margin:auto;
+/* width:1200px; */
+}
+
+button {
+    background-color: #080908; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+  }

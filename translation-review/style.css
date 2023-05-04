@@ -1,0 +1,13 @@
+body{
+    margin:10px;
+    background-color: azure;
+}
+
+h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: oblique;
+}
+
+#canvasContainer{
+margin-left :30px;
+}
