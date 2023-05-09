@@ -26,7 +26,7 @@ function preload(){
 }
 function setup() {
 let cnv = createCanvas(windowWidth,windowHeight);
-cnv.parent("canvasContainer")
+cnv.parent("canvasContainer");
 
   background(240, 255, 255);
   push();
