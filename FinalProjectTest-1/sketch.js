@@ -580,8 +580,8 @@ function toolBar() {
   push();
   textSize(24);
   fill(220);
-  text("ERASER",tx*2 , ty + 585);
+  text("ERASER",tx*2.1 , ty + 585);
   pop();
-  
+
 }
 
