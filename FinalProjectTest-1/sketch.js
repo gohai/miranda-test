@@ -17,6 +17,7 @@ let Image2;
 let Image3;
 let Image4;
 
+
 function preload(){
   Image1 = loadImage("assets/particle.png");
   Image2 = loadImage("assets/fireworks.png");
@@ -242,9 +243,6 @@ class DrawingBoard {
     for(let i = 0; i<this.objects.length;i++){   
        this.objects[i].update();
        this.objects[i].display();
-     
-      //  this.objects[i].display1();
-      //  this.objects[i].display2();
     }
   }
   drawLine(x1, y1, x2, y2) {
@@ -397,7 +395,8 @@ function button() {
   push();
   if(invisibleCanvas[0].covered == false && invisibleCanvas[1].covered == false && invisibleCanvas[2].covered == false){
     guidance = false;
-  
+    // let img = get(width/2,height*0.1,width*0.4,height*0.9);
+    // img.save = ("finalpiece.png");
   }
   pop();
 }
