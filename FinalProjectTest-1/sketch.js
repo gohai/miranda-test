@@ -582,5 +582,6 @@ function toolBar() {
   fill(220);
   text("ERASER",tx*2 , ty + 585);
   pop();
+  
 }
 
