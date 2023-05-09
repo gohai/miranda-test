@@ -379,7 +379,7 @@ function button() {
   textSize(12);
   textFont('Georgia');
    text("draw body part",width/2-100,height/2-60);
-   text("leave some hints here",width/2-120,height/2+182);
+   text("leave some hints here",width/2-120,height/2+150);
   text("Done", width - 60, height / 2 + 40);
   noFill();
   rect(width - 70, height / 2 + 20, 50, 50);
@@ -389,7 +389,7 @@ function button() {
   fill(0);
   textSize(12);
   textFont('Georgia');
-  text("draw bottom part",width/2-100,height/2+220);
+  text("draw bottom part",width/2-100,height/2+172);
   text("Done", width - 60, height / 2 + 272);
   noFill();
   rect(width - 70, height / 2 + 240, 50, 50);
