@@ -12,7 +12,7 @@ let fire = false;
 let sinw = false;
 let cosw = false;
 let line = true;
-let era = false;
+//let era = false;
 let Image1;
 let Image2;
 let Image3;
@@ -532,7 +532,7 @@ function mousePressed(){
     line = false;
   }else if(mouseX>width*0.1+20&&mouseX<width*0.4-20&&mouseY>height*0.1+560&&mouseY<height*0.1+880){
     line = true;
-   sinw = false;
+     sinw = false;
     pa = false;
     fire = false;
     cosw = false;
