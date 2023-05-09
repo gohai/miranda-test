@@ -62,9 +62,7 @@ function draw() {
         let particleX = mouseX - invisibleCanvas[0].x;
         let particleY = mouseY - invisibleCanvas[0].y;
         invisibleCanvas[0].objects.push( new Particle(particleX, particleY, invisibleCanvas[0].graphicLayer2 ));
-        if(era== true){
-          invisibleCanvas[0].objects.push( new eraser1(particleX, particleY, invisibleCanvas[0].graphicLayer2 ));
-        }
+        
       }else if(fire == true ){
         let particleX = mouseX - invisibleCanvas[0].x;
         let particleY = mouseY - invisibleCanvas[0].y;
@@ -84,9 +82,7 @@ function draw() {
         let particleX = mouseX - invisibleCanvas[0].x;
         let particleY = mouseY - invisibleCanvas[0].y;
         invisibleCanvas[0].objects.push( new CosineWave(particleX, particleY, invisibleCanvas[0].graphicLayer2 ));
-        if(era== true){
-          invisibleCanvas[0].objects.push( new eraser1(particleX, particleY, invisibleCanvas[0].graphicLayer2 ));
-        }
+        
       }  
     }
     if (mouseIsPressed == true && a == 1) {
@@ -94,9 +90,7 @@ function draw() {
         let particleX = mouseX - invisibleCanvas[1].x;
         let particleY = mouseY - invisibleCanvas[1].y;
         invisibleCanvas[1].objects.push(new Particle(particleX, particleY, invisibleCanvas[1].graphicLayer2 ));
-        if(era== true){
-          invisibleCanvas[1].objects.push( new eraser1(particleX, particleY, invisibleCanvas[1].graphicLayer2 ));
-        }
+        
       }else if(fire == true ){
         let particleX = mouseX - invisibleCanvas[1].x;
         let particleY = mouseY - invisibleCanvas[1].y;
@@ -107,18 +101,14 @@ function draw() {
         let particleX = mouseX - invisibleCanvas[1].x;
         let particleY = mouseY - invisibleCanvas[1].y;
         invisibleCanvas[1].objects.push( new SineWave(particleX, particleY, invisibleCanvas[1].graphicLayer2 ));
-        if(era== true){
-          invisibleCanvas[1].objects.push( new eraser1(particleX, particleY, invisibleCanvas[1].graphicLayer2 ));
-        }
+        
       }else if(line == true){
       invisibleCanvas[1].drawLine(pmouseX, pmouseY, mouseX, mouseY);
      }else if(cosw == true ){
       let particleX = mouseX - invisibleCanvas[1].x;
       let particleY = mouseY - invisibleCanvas[1].y;
       invisibleCanvas[1].objects.push( new CosineWave(particleX, particleY, invisibleCanvas[1].graphicLayer2 ));
-      if(era== true){
-        invisibleCanvas[1].objects.push( new eraser1(particleX, particleY, invisibleCanvas[1].graphicLayer2 ));
-      }
+      
     }
   }  
     if (mouseIsPressed == true && a == 2) {
@@ -127,9 +117,7 @@ function draw() {
         let particleX = mouseX - invisibleCanvas[2].x;
         let particleY = mouseY - invisibleCanvas[2].y;
         invisibleCanvas[2].objects.push(new Particle(particleX, particleY, invisibleCanvas[2].graphicLayer2));
-        if(era== true){
-          invisibleCanvas[2].objects.push( new eraser1(particleX, particleY, invisibleCanvas[2].graphicLayer2 ));
-        }
+        
       }else if(fire == true ){
         let particleX = mouseX - invisibleCanvas[2].x;
         let particleY = mouseY - invisibleCanvas[2].y;
@@ -143,16 +131,12 @@ function draw() {
         let particleX = mouseX - invisibleCanvas[2].x;
         let particleY = mouseY - invisibleCanvas[2].y;
         invisibleCanvas[2].objects.push( new SineWave(particleX, particleY, invisibleCanvas[2].graphicLayer2 ));
-        if(era== true){
-          invisibleCanvas[2].objects.push( new eraser1(particleX, particleY, invisibleCanvas[2].graphicLayer2 ));
-        }
+        
       }else if(cosw == true ){
         let particleX = mouseX - invisibleCanvas[2].x;
         let particleY = mouseY - invisibleCanvas[2].y;
         invisibleCanvas[2].objects.push( new CosineWave(particleX, particleY, invisibleCanvas[2].graphicLayer2 ));
-        if(era== true){
-          invisibleCanvas[2].objects.push( new eraser1(particleX, particleY, invisibleCanvas[2].graphicLayer2 ));
-        }
+        
       } 
     }
   //display invisble canvas & change thickness
@@ -387,24 +371,7 @@ class CosineWave{
   }
 }
 
-class eraser{
-  constructor(mx,my, layer){
-    this.x = mx;
-    this.y = my;
-  
-    this.graphicLayer = layer;
-  }
-  
-  display(){
-    //this.fill = invisibleCanvas[0].c;
-    this.graphicLayer.push();
-    this.graphicLayer.translate(this.x,this.y);
-    this.graphicLayer.fill(255);
-    this.graphicLayer.noStroke();
-    this.graphicLayer.circle(0,0,10);
-    this.graphicLayer.pop();
-   }
-  }
+
 
 function button() {
    //1
@@ -565,8 +532,7 @@ function mousePressed(){
     line = false;
   }else if(mouseX>width*0.1+20&&mouseX<width*0.4-20&&mouseY>height*0.1+560&&mouseY<height*0.1+880){
     line = true;
-    era = true;
-    sinw = false;
+   sinw = false;
     pa = false;
     fire = false;
     cosw = false;
