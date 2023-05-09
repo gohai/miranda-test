@@ -367,8 +367,8 @@ function button() {
   textSize(12);
   textFont('Georgia');
   
-  text("draw head part",width/2-100,height/2-350);
-  text("leave some hints here",width/2-120,height/2-108);
+  text("draw head part",width/2-100,height/2-280);
+  text("leave some hints here",width/2-120,height/2-83);
   text("Done", width - 60, height / 2 - 250);
   noFill();
   rect(width - 70, height / 2 - 270, 50, 50);
@@ -526,7 +526,7 @@ function toolBar() {
   let th = height * 0.8;
   //tool bar
   noFill();
-  rect(tx, ty, tw, th-150);
+  rect(tx, ty, tw, th);
   //pen
   rect(tx + 20, ty + 60, tw - 40, 40);
   //thisckness
