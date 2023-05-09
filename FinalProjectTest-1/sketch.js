@@ -75,9 +75,7 @@ function draw() {
         let particleX = mouseX - invisibleCanvas[0].x;
         let particleY = mouseY - invisibleCanvas[0].y;
         invisibleCanvas[0].objects.push( new SineWave(particleX, particleY, invisibleCanvas[0].graphicLayer2 ));
-        if(era== true){
-          invisibleCanvas[0].objects.push( new eraser1(particleX, particleY, invisibleCanvas[0].graphicLayer2 ));
-        }
+        
       }else if(cosw == true ){
         let particleX = mouseX - invisibleCanvas[0].x;
         let particleY = mouseY - invisibleCanvas[0].y;
