@@ -79,6 +79,10 @@ function captureFrame() {
     localStorage.setItem("capturedImage", base64Image);
 
     captureCount++;
+  
+     if (hands.length > 0) {
+        storeFingerData(hands[0]); // 假设只有一个手在检测
+    }
 }
 
 function draw() {
@@ -101,9 +105,7 @@ function draw() {
     if (result) {
         image(result, 0, 0, w, h);
     }
-
-    
-    
+  
    
     for (let i = 0; i < hands.length; i++) {
         let hand = hands[i];
@@ -149,6 +151,21 @@ function draw() {
     }
 }
 
+function storeFingerData(hand) {
+  // 假设手的关键点在hand.keypoints数组中
+  // 计算手指的长度，假设长度为两个关键点之间的距离
+  let fingerLengths = {
+    thumb: dist(hand.keypoints[0].x, hand.keypoints[0].y, hand.keypoints[1].x, hand.keypoints[1].y),
+    index: dist(hand.keypoints[5].x, hand.keypoints[5].y, hand.keypoints[6].x, hand.keypoints[6].y),
+    middle: dist(hand.keypoints[9].x, hand.keypoints[9].y, hand.keypoints[10].x, hand.keypoints[10].y),
+    ring: dist(hand.keypoints[13].x, hand.keypoints[13].y, hand.keypoints[14].x, hand.keypoints[14].y),
+    pinky: dist(hand.keypoints[17].x, hand.keypoints[17].y, hand.keypoints[18].x, hand.keypoints[18].y),
+  };
+
+  // 将手指长度数据存储到 localStorage
+  localStorage.setItem('fingerLengths', JSON.stringify(fingerLengths));
+  console.log("Finger lengths stored:", fingerLengths);
+}
 
 function jsfeatToP5(src, dst) {
     if (!dst || dst.width != src.cols || dst.height != src.rows) {
