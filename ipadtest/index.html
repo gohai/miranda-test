@@ -1,49 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/p5.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/addons/p5.sound.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/IDMNYU/p5.js-speech@0.0.3/lib/p5.speech.js"></script>
-    <script src="comfyui-p5-helper.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Coloring and Screenshot</title>
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-      }
-      canvas {
-        display: block;
-        margin: 0 auto;
-      }
-      #controls {
-        position: fixed;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 100;
-      }
-      button, input[type="color"] {
-        margin: 5px;
-        padding: 10px;
-        font-size: 16px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="controls">
-      <input id="colorPicker" type="color" value="#000000">
-      <button id="clearButton">Clear</button>
-      <button id="saveButton">Save</button>
-    </div>
-    <main></main>
-    <script src="openai.js"></script>
-    <script src="sketch.js"></script>
-  </body>
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/p5.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/addons/p5.sound.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/IDMNYU/p5.js-speech@0.0.3/lib/p5.speech.js"></script>
+  <script src="comfyui-p5-helper.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Coloring and Screenshot</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    canvas {
+      display: block;
+      margin: 0 auto;
+    }
+    #controls {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100;
+      display: flex;
+      gap: 10px;
+    }
+    button, input[type="color"] {
+      margin: 5px;
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="controls">
+    <input id="colorPicker" type="color" value="#000000">
+    <button id="clearButton">Clear</button>
+    <button id="saveButton">Save</button>
+  </div>
+  <main></main>
+  <script src="openai.js"></script>
+  <script src="sketch.js"></script>
+</body>
 </html>
