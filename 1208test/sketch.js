@@ -28,10 +28,11 @@ function preload() {
 
 function setup() {
   createCanvas(1000, 900);
-
   drawingLayer = createGraphics(600, 400);
+
   colorPicker = createColorPicker("white");
   colorPicker.position(605, 10);
+
   sizeSlider = createSlider(1, 50, brushSize);
   sizeSlider.position(605, 48);
 
@@ -39,18 +40,29 @@ function setup() {
   analyzeButton.position(605, 118);
   analyzeButton.mousePressed(analyzePastLife);
 
-  let clearButton = createButton("Restart");
+  let clearButton = createButton("Clear");
   clearButton.position(605, 84);
-  clearButton.mousePressed(restartCanvas);
+  clearButton.mousePressed(() => drawingLayer.clear());
 
-  // Initialize ComfyUI helper
+  let saveButton = createButton("Save");
+  saveButton.position(605, 154);
+  saveButton.mousePressed(() => saveCanvas(drawingLayer, 'drawing', 'png')); // Save image
+
+  // Initialize captured image
+  let base64Image = localStorage.getItem("capturedImage");
+  if (base64Image) {
+    capturedImg = loadImage(base64Image);
+  }
+
   comfy = new ComfyUiP5Helper("https://gpu1.gohai.xyz:8188");
 }
 
-
 function draw() {
   background(255, 255, 255);
-  image(img_1, 0, 0, 600, 400); // Display captured image
+  // if (capturedImg) {
+  //   image(capturedImg, 0, 0, 600, 400); // Display captured image
+  // }
+  image(img_1, 0, 0, 600, 400);
   image(drawingLayer, 0, 0); // Display drawing layer
 
   fill(0);
@@ -58,36 +70,22 @@ function draw() {
   textAlign(CENTER, TOP);
   textSize(16);
   text(currentText, 610, 150, 360, height - 150);
-  if (charIndex < resultText.length) {
-    frameCounter++;
-    if (frameCounter % typingSpeed == 0) {
-      currentText += resultText.charAt(charIndex);
-      charIndex++;
-    }
-  }
-  if (resImg) {
-    image(resImg, 0, 420, 600, 280);
-  }
 }
 
-function touchStarted(event) {
-  // 阻止触摸设备的默认行为（滚动）
-  event.preventDefault();
-
+function touchStarted() {
+  // Start drawing with touch
   let x = touches[0]?.x || mouseX;
   let y = touches[0]?.y || mouseY;
 
   drawingLayer.noErase();
   drawingLayer.strokeWeight(sizeSlider.value());
   drawingLayer.stroke(colorPicker.color());
-  drawingLayer.line(x, y, x, y); // 绘制一个点
-  return false; // 防止事件冒泡
+  drawingLayer.line(x, y, x, y); // Draw a dot where touch starts
+  return false; // Prevent default behavior
 }
 
-function touchMoved(event) {
-  // 阻止触摸设备的默认行为（滚动）
-  event.preventDefault();
-
+function touchMoved() {
+  // Continue drawing with touch
   let x = touches[0]?.x || mouseX;
   let y = touches[0]?.y || mouseY;
 
@@ -97,10 +95,9 @@ function touchMoved(event) {
   drawingLayer.noErase();
   drawingLayer.strokeWeight(sizeSlider.value());
   drawingLayer.stroke(colorPicker.color());
-  drawingLayer.line(px, py, x, y); // 绘制线条
-  return false; // 防止事件冒泡
+  drawingLayer.line(px, py, x, y); // Draw a line following the touch
+  return false; // Prevent default behavior
 }
-
 
 function mouseDragged() {
   // Fallback for non-touchscreen devices
@@ -109,6 +106,7 @@ function mouseDragged() {
   drawingLayer.stroke(colorPicker.color());
   drawingLayer.line(pmouseX, pmouseY, mouseX, mouseY);
 }
+
 
 
 function analyzePastLife() {
