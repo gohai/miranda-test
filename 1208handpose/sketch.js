@@ -11,8 +11,8 @@ let guideAlpha = 128; //transparency for hand
 let isCapturing = false;
 
 function preload() {
-  //handPose = ml5.handPose();
-  //handGuideImg = loadImage("hand_guide.png");
+  handPose = ml5.handPose();
+  handGuideImg = loadImage("hand_guide.png");
 }
 
 function setup() {
@@ -23,7 +23,6 @@ function setup() {
   capture.size(w, h);
   capture.hide();
 
-  /*
   buffer = new jsfeat.matrix_t(w, h, jsfeat.U8C1_t);
 
   let rectWidth = 800;
@@ -36,7 +35,6 @@ function setup() {
   };
 
   handPose.detectStart(capture, gotHands);
-  */
 }
 
 function gotHands(results) {
@@ -85,10 +83,9 @@ function draw() {
   push();
   translate(capture.width, 0);
   scale(-1, 1);
-  //capture.loadPixels();
+  capture.loadPixels();
   image(capture, 0, 0, width, height);
 
-  /*
   if (capture.pixels.length > 0) {
     // let blurSize = 4;
     // let lowThreshold = 5;
@@ -180,7 +177,6 @@ function draw() {
       }
     }
   }
-  */
   pop();
 }
 
