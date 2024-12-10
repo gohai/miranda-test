@@ -27,10 +27,8 @@ function preload() {
   let base64Image = localStorage.getItem("capturedHandImage");
 
   if (base64Image) {
-    // 如果存在 Base64 图像，直接加载
     img_1 = loadImage(base64Image);
   } else {
-    // 如果没有，则使用默认图像
     img_1 = loadImage("1.jpg");
   }
 
