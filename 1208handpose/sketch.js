@@ -71,6 +71,11 @@ async function captureFrame() {
   capturedImage.save("hand_contour_" + captureCount, "png");
   captureCount++;
 
+  let base64Image = capturedImage.canvas.toDataURL("image/png");
+
+  //  store Base64 image into localStorage 
+  localStorage.setItem("capturedHandImage", base64Image);
+
   isCapturing = false;
 }
 
