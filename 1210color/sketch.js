@@ -53,7 +53,7 @@ function setup() {
     event.preventDefault();
   });
 
-  drawingLayer = createGraphics(600, 400);
+  drawingLayer = createGraphics(430, 480);
   colorPicker = createColorPicker("white");
   colorPicker.position(605, 10);
   sizeSlider = createSlider(1, 50, brushSize);
@@ -73,7 +73,7 @@ function setup() {
 
 function draw() {
   background(255, 255, 255);
-  image(img_1, 0, 0, 600, 400);
+  image(img_1, 0, 0, 430, 480);
   image(drawingLayer, 0, 0);
 
   brushSize = sizeSlider.value();
